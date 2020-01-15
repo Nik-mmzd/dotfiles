@@ -1,4 +1,4 @@
-# Prototik's dotfiles
+# ~~Prototik's~~ McModder's dotfiles
 Collection of standalone configs for zsh for easy-to-use setup for new machines /etc
 
 ## One-click installation

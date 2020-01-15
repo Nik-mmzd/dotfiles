@@ -1,0 +1,15 @@
+#!/bin/bash
+# needs curl jq
+_version="${1:-$(curl -sL https://launchermeta.mojang.com/mc/game/version_manifest.json | jq -r '.latest.release')}"
+
+_url="$(curl -sL https://launchermeta.mojang.com/mc/game/version_manifest.json | jq -r ".versions[] | select(.id == \"$_version\") | .url")"
+_ver="$(curl -sL "$_url")"
+
+_ver_url="$(jq -r '.downloads.server.url' <<< "$_ver")"
+_ver_sha1="$(jq -r '.downloads.server.sha1' <<< "$_ver")"
+
+curl -s --output server.jar "$_ver_url"
+if [ "$(sha1sum server.jar | cut -f1 -d' ')" != "$_ver_sha1" ]; then
+  echo CAN\'T VERIFY SERVER JAR >&2
+  exit 1
+fi

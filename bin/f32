@@ -1,0 +1,35 @@
+#!/bin/bash
+case $1 in
+  1.4*)
+    wget http://www.f32.me/old/F32%20for%201.4.7.zip
+    ;;
+  1.5*)
+    wget http://www.f32.me/old/F32%20for%201.5.2.zip
+    ;;
+  1.6*)
+    wget http://www.f32.me/old/F32%20for%201.6.4.zip
+    ;;
+  1.7*)
+    wget http://www.f32.me/old/F32-1.7.10.zip
+    ;;
+  1.8*)
+    wget https://github.com/F32Organization/Faithful32-1.8.9/archive/master.zip
+    unzip master.zip
+    rm -f master.zip
+    ;;
+  1.9*|1.10*)
+    wget https://github.com/F32Organization/Faithful32-1.10.2/archive/master.zip
+    unzip master.zip
+    rm -f master.zip
+    ;;
+  1.11*)
+    wget https://github.com/F32Organization/Faithful32-1.11.2/archive/master.zip
+    unzip master.zip
+    rm -f master.zip
+    ;;
+  *)
+    wget https://github.com/F32Organization/Faithful32-1.12.2/archive/master.zip
+    unzip master.zip
+    rm -f master.zip
+    ;;
+esac

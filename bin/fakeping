@@ -1,0 +1,86 @@
+#!/usr/bin/bash
+ip=($(dig +short $(idn <<< $@ 2>/dev/null) 2>/dev/null))
+if [ -z "$ip" ]; then
+  ping $@
+  exit 1
+fi
+
+case $@ in
+  kiscord.info|prok.pw|aur.rocks)
+    trap '{ echo ""; echo "--- ${@} ping statistics ---"; echo "$dinner packets transmitted, 0 received, 100% поди , time нахуй"; echo "rtt min/avg/max/mdev = я/сказал/поди/нахуй ms"; exit; }' INT
+    dinner=0
+    ip=($(dig +short $(idn <<< $@)))
+    echo -e '\033]2;ping '$@'\007'"PING $@ (${ip}) 56(84) bytes of data."
+    while true; do
+      echo "Поди нахуй"
+      ((dinner++))
+      sleep 1
+    done
+    ;;
+  почта.рф|russianpost.ru|pochta.ru)
+    trap '{ echo ""; echo "--- ${@} ping statistics ---"; echo "$dinner packets transmitted, 0 received, 100% обед, time dinner"; echo "rtt min/avg/max/mdev = обед/обед/обед/обед ms"; exit; }' INT
+    dinner=0
+    ip=($(dig +short $(idn <<< $@)))
+    echo -e '\033]2;ping '$@'\007'"PING $@ (${ip}) 56(84) bytes of data."
+    while true; do
+      echo "Мужчина, вы что, не видите, что у нас обед?"
+      ((dinner++))
+      sleep 1
+    done
+    ;;
+    ushakov.co)
+      trap '{ echo ""; echo "--- ${@} ping statistics ---"; echo "$dinner packets transmitted, 0 received, 100% чсв, time атчичаю"; echo "rtt min/avg/max/mdev = отстань/от/совсем/убогих ms"; exit; }' INT
+      dinner=0
+      ip=($(dig +short $(idn <<< $@)))
+      echo -e '\033]2;ping '$@'\007'"PING $@ (${ip}) 56(84) bytes of data."
+      echo "Обнаружено высокое ЧСВ"
+      ((dinner++))
+      sleep 1
+      echo "ЧСВ на критической отметке. Включаю ЧСВ-щит"
+      ((dinner++))
+      sleep 1
+      while true; do
+        echo "Ответ не пропущен ЧСВ-щитом"
+        ((dinner++))
+        sleep 1
+      done
+    ;;
+
+    rkn.gov.ru|blocklist.rkn.gov.ru|eais.rkn.gov.ru|nap.rkn.gov.ru|398-fz.rkn.gov.ru|97-fz.rkn.gov.ru)
+    trap '{ echo ""; echo "--- ${@} ping statistics ---"; echo "$dinner packets transmitted, 0 received, 100% пиздец, cheburashka time"; echo "rtt min/avg/max/mdev = вали/из/этой/страны ms"; exit; }' INT
+    answers=('Мужчина, вам в соседнее окно'
+      'Мы заняты блокировкой интернета и не можем ответить на ваш пинг'
+      '[крики обезьян]'
+      'Шо. умный нашелся? Пингуешь? ЗАБЛОКИРОВАТЬ!'
+      'Ошибка 451: Недоступно по юридическим причинам'
+      'Превышено время ожидания для ответа'
+      'Ответ невозможен: для него нужен мозг'
+      'Данный протокол более не поддерживается. Переходите на Чебурашку'
+      'Что, пинг? Не такой крутой уже, а?'
+      'Блокируем себе анус, пожалуйста, подождите...'
+      'Вы ошиблись адресом: мы гей-клуб'
+      'Ваш пинг не может быть обслужен: все лесби-официантки заняты'
+      'Блокируем Телеграм... Стоп, почему он работает?'
+      'Ваш запрос из запрещенной подсети 0.0.0.0/0'
+      '51.15.0.0/16! Ранил! 159.203.0.0/16! Убил!'
+      'Простите, мы удаляем письма с жалобами и не можем ответить'
+      'Нет, мы не подтирались Конституци... кгхм, вы что-то хотели?'
+      'Блокируем Bitbucket...'
+      'Читаем usher2'
+      'Проверяем BurgerKing'
+      'Пожалуйста, подождите, все операторы заняты'
+      )
+    dinner=0
+    answer="${answers[$RANDOM % ${#answers[@]}]}"
+    ip=($(dig +short $@))
+    echo -e '\033]2;ping '$@'\007'"PING $@ (${ip}) 56(84) bytes of data."
+    while true; do
+      echo "${answer}"
+      ((dinner++))
+      sleep 1
+    done
+    ;;
+  *)
+    ping $@
+    ;;
+esac
