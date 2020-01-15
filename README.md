@@ -5,17 +5,15 @@ Collection of standalone configs for zsh for easy-to-use setup for new machines 
 Main method of installation involves moving (almost) all zsh related things to separate directory and cloning this repo to that directory:
 
 ```zsh
-zsh <(curl -Ls https://tinyurl.com/kk-files)
+zsh <(curl -Ls https://git.modder.pw/mcmodder/dotfiles-patches/raw/master/install.zsh)
 ```
-If you don't trust tinyurl (and you do it right) or want to review that script - use `https://gitlab.com/Prototik/dotfiles/raw/master/install.zsh` instead.
-
 You can specify ZDOTDIR location by `-z` argument (by default ~/.zsh).
 
 ## Manual installation
 ```
 echo 'ZDOTDIR="$HOME/.zsh"` >> ~/.zshenv
 source ~/.zshenv
-git clone https://gitlab.com/Prototik/dotfiles.git "$ZDOTDIR"
+git clone https://git.modder.pw/mcmodder/dotfiles-patches.git "$ZDOTDIR"
 ```
 
 ## Configure keybinds

@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 zdotdir='.zsh'
-repo='https://gitlab.com/Prototik/dotfiles.git'
+repo='https://git.modder.pw/mcmodder/dotfiles-patches.git'
 
 while getopts ':z:r:' arg; do
   case "$arg" in
