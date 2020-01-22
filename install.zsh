@@ -49,7 +49,7 @@ else
 fi
 
 [[ -e "$HOME/.zsh_history" ]] && cp "$HOME/.zsh_history" "$ABSOLUTE_TARGET/.zhistory"
-# [[ -e "$HOME/.ssh/config" ]] && ! grep -Fxq "Include $ABSOLUTE_TARGET/ssh.config" "$HOME/.ssh/config" && echo "Include $ABSOLUTE_TARGET/ssh.config" >> "$HOME/.ssh/config"
+# [[ -e "$HOME/.zprofile" ]] && cp "$HOME/.zprofile" "$ABSOLUTE_TARGET/.zprofile"
 
 echo "Done! Open a new terminal to see changes."
 
