@@ -1,5 +1,0 @@
-#!/bin/bash
-echo "Generating initrd..."
-sudo sudo mkinitcpio -p linux
-echo "Generating EFISTUB..."
-sudo /usr/local/sbin/generate-linux-efi /boot/vmlinuz-linux /boot/initramfs-linux.img /efi/EFI/Linux/ArchLinux.efi
