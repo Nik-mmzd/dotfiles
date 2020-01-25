@@ -12,7 +12,7 @@ function nb {
 }
 
 function nt {
-    xdg-open "$(t)"
+    xdg-open "$(mktemp -d)"
 }
 
 alias dns='resolvectl query'
