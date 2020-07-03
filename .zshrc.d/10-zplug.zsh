@@ -12,7 +12,7 @@ ZPLUG_LOADFILE="${ZDOTDIR:-$HOME}/.zplugrc"
 source "$ZPLUG_HOME/init.zsh"
 
 if ! zplug check; then
-    zplug install
+    LC_ALL="en_US.UTF-8" zplug install
 fi
 
-zplug load
+LC_ALL="en_US.UTF-8" zplug load

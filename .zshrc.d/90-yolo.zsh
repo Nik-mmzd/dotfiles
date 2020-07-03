@@ -12,7 +12,7 @@ alias yolo='git commit -m "$(curl -s whatthecommit.com/index.txt)"'
      ;;
     update)
       git -C "$ZDOTDIR" pull && \
-      zplug update && \
+      LC_ALL="en_US.UTF-8" zplug update && \
       source "$ZDOTDIR/.zshrc"
       ;;
     yolo)
