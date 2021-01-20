@@ -1,4 +1,4 @@
-\## From OH-MY-ZSH https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/key-bindings.zsh
+## From OH-MY-ZSH https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/key-bindings.zsh
 
 # start typing + [Up-Arrow] - fuzzy find history forward
 autoload -U up-line-or-beginning-search
