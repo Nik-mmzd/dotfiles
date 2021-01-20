@@ -1,13 +1,13 @@
-## From OH-MY-ZSH https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/key-bindings.zsh
+\## From OH-MY-ZSH https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/key-bindings.zsh
 
 # start typing + [Up-Arrow] - fuzzy find history forward
 autoload -U up-line-or-beginning-search
 zle -N up-line-or-beginning-search
-bindkey '^[[A' up-line-or-beginning-search
+bindkey "${key[Up]}" up-line-or-beginning-search
 # start typing + [Down-Arrow] - fuzzy find history backward
 autoload -U down-line-or-beginning-search
 zle -N down-line-or-beginning-search
-bindkey '^[[B' down-line-or-beginning-search
+bindkey "${key[Down]}" down-line-or-beginning-search
 
 # [Shift-Tab] - move through the completion menu backwards
 bindkey '^[[Z' reverse-menu-complete
