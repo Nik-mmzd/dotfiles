@@ -15,3 +15,5 @@ sudo-command-line() {
 
 zle -N sudo-command-line
 bindkey "\e\e" sudo-command-line
+
+alias sudo='sudo -E=SSH_CONNECTION'
