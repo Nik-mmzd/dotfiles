@@ -17,7 +17,7 @@ zle -N down-line-or-beginning-search
 bindkey -- "${key[Down]}" down-line-or-beginning-search
 
 # [Shift-Tab] - move through the completion menu backwards
-bindkey -- '${key[Shift-Tab]}' reverse-menu-complete
+bindkey -- "${key[Shift-Tab]}" reverse-menu-complete
 
 # [Ctrl-RightArrow] - move forward one word
 bindkey -- "${key[Control-Right]}" forward-word
