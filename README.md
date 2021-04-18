@@ -3,6 +3,10 @@ Collection of standalone configs for zsh for easy-to-use setup for new machines 
 
 ## One-click installation
 Main method of installation involves moving (almost) all zsh related things to separate directory and cloning this repo to that directory:
+```zsh
+zsh <(curl -Ls https://l.modder.pw/zsh-install)
+```
+or you can use a direct link
 
 ```zsh
 zsh <(curl -Ls https://git.modder.pw/mcmodder/dotfiles-patches/raw/master/install.zsh)
