@@ -1,4 +1,2 @@
-if [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
-  source "$HOME/.sdkman/bin/sdkman-init.sh"
-  export SDKMAN_DIR="$HOME/.sdkman"
-fi
+export SDKMAN_DIR="${SDKMAN_DIR:-$HOME/.sdkman}"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
