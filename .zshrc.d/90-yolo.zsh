@@ -17,7 +17,7 @@ alias yolo='git commit -m "$(curl -s whatthecommit.com/index.txt)"'
       ;;
     yolo)
       git -C "$ZDOTDIR" add "$ZDOTDIR"
-      git -C "$ZDOTDIR" commit -m "$(curl -s whatthecommit.com/index.txt)" "${@:2}"
+      git -C "$ZDOTDIR" commit -m "$(curl -s https://whatthecommit.com/index.txt)" "${@:2}"
       git -C "$ZDOTDIR" push
       ;;
     *)
