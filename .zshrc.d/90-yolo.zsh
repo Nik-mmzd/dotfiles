@@ -2,7 +2,8 @@ alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc'
 alias zplugrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zplugrc'
 alias yolo='git commit -m "$(curl -s https://whatthecommit.com/index.txt)"'
 
-[[ "${ZDOTDIR:-$HOME}" != "$HOME" ]] && function rc {
+function rc {
+  local ZDOTDIR="${ZDOTDIR:-$HOME}"
   case "$1" in
     cd)
       cd "$ZDOTDIR/${@:2}"
