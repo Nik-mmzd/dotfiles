@@ -16,9 +16,6 @@ zkbd_mapping[Down]=down-line-or-beginning-search
 zkbd_mapping[Home]=beginning-of-line
 zkbd_mapping[End]=end-of-line
 zkbd_mapping[Delete]=delete-char
-zkbd_mapping[Shift-Tab]=reverse-menu-complete
-zkbd_mapping[Control-Right]=forward-word
-zkbd_mapping[Control-Left]=backward-word
 
 function __kk::zkbd::load() {
   [[ -e "$1" ]] && source "$1"
@@ -36,6 +33,13 @@ for mapping in "${zkbd_keymaps[@]}"; do
 done
 
 unset __kk_zkbd_missing
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+
+__kk::zkbd::bind "forward-word" "^[[1;5C"
+__kk::zkbd::bind "backward-word" "^[[1;5D"
+__kk::zkbd::bind "reverse-menu-complete" "^[[Z"
 
 for k in "${(@k)zkbd_mapping}"; do
   __kk::zkbd::bind "$k" "$zkbd_mapping[$k]"
