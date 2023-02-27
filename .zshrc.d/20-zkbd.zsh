@@ -39,10 +39,6 @@ autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-__kk::zkbd::bind "forward-word" "^[[1;5C"
-__kk::zkbd::bind "backward-word" "^[[1;5D"
-__kk::zkbd::bind "reverse-menu-complete" "^[[Z"
-
 for k in "${(@k)zkbd_mapping}"; do
   __kk::zkbd::bind "$k" "$zkbd_mapping[$k]"
 done
