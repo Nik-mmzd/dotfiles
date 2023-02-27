@@ -36,6 +36,8 @@ unset __kk_zkbd_missing
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
 
 __kk::zkbd::bind "forward-word" "^[[1;5C"
 __kk::zkbd::bind "backward-word" "^[[1;5D"
