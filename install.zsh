@@ -43,9 +43,10 @@ mkdir -p $(dirname "$ABSOLUTE_TARGET")
 git clone "$repo" "$ABSOLUTE_TARGET"
 
 if [[ -e "$HOME/.zshenv" ]]; then
-  sed -i "$HOME/.zshenv" -e "1iZDOTDIR=$ENV_TARGET" -e '/^ZDOTDIR=/d'
+  sed -i "$HOME/.zshenv" -e "1iZDOTDIR=$ENV_TARGET" -e '/^ZDOTDIR=/d' -e '1iDEBIAN_PREVENT_KEYBOARD_CHANGES=true' -e '/^DEBIAN_PREVENT_KEYBOARD_CHANGES=/d'
 else
-  echo "ZDOTDIR=$ENV_TARGET" > "$HOME/.zshenv"
+  echo "DEBIAN_PREVENT_KEYBOARD_CHANGES=true" > "$HOME/.zshenv"
+  echo "ZDOTDIR=$ENV_TARGET" >> "$HOME/.zshenv"
 fi
 
 [[ -e "$HOME/.zsh_history" ]] && cp "$HOME/.zsh_history" "$ABSOLUTE_TARGET/.zhistory"
