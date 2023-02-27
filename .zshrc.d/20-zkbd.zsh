@@ -11,11 +11,14 @@ zkbd_keymaps+=("${ZDOTDIR:-$HOME}/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}")
 
 zkbd_mapping[Left]=backward-char
 zkbd_mapping[Right]=forward-char
-zkbd_mapping[Up]=up-line-or-history
-zkbd_mapping[Down]=down-line-or-history
+zkbd_mapping[Up]=up-line-or-beginning-search
+zkbd_mapping[Down]=down-line-or-beginning-search
 zkbd_mapping[Home]=beginning-of-line
 zkbd_mapping[End]=end-of-line
 zkbd_mapping[Delete]=delete-char
+zkbd_mapping[Shift-Tab]=reverse-menu-complete
+zkbd_mapping[Control-Right]=forward-word
+zkbd_mapping[Control-Left]=backward-word
 
 function __kk::zkbd::load() {
   [[ -e "$1" ]] && source "$1"
